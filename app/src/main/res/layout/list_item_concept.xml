@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/orange"/>
+
+        <ImageView
+            android:id="@+id/concept_icon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_image_placeholder_64"/>
+
+        <TextView
+            android:id="@+id/concept_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toRightOf="@id/concept_icon"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <ImageButton
+            android:id="@+id/wiki_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/concept_label"
+            android:layout_toRightOf="@id/concept_icon"
+            android:src="@drawable/ic_wikipedia_24"/>
+
+        <ImageButton
+            android:id="@+id/db_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/concept_label"
+            android:layout_toRightOf="@id/wiki_icon"
+            android:src="@drawable/ic_db_24"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+
+</RelativeLayout>

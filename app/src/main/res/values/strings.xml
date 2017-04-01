@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">WikiSieve</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="current_query">Current Query</string>
+    <string name="history">History</string>
+
+    <string name="query_text">Query Text</string>
+    <string name="prompt_enter_text">Enter Text to Analyze for Concepts.</string>
+    <string name="query_failed">Query failed. Please check your internet connection and try again.</string>
+    <string name="empty_query">The query field cannot be empty.</string>
+    <string name="close">Close</string>
+    <string name="concepts_detected">Concepts Detected</string>
+    <string name="sift">Sift</string>
+    <string name="no_concepts_found">Sorry, no concepts have been found for your input.</string>
+    <string name="reset">Reset</string>
+
+    <string name="no_history">No past queries have been stored.</string>
+    <string name="concepts">Concepts</string>
+
+    <string name="text_process_label">Sift</string>
+</resources>
