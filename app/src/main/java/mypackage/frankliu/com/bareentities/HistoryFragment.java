@@ -65,9 +65,9 @@ public class HistoryFragment extends Fragment {
             @Override
             public void onLoadFinished(Loader<ArrayList<PastQuery>> loader, ArrayList<PastQuery> data) {
                 mPastQueries = data;
-                System.out.println("load finished");
                 if(mPastQueries.size()>0){
                     mRecyclerView.setVisibility(View.VISIBLE);
+                    mEmptyTextView.setVisibility(View.GONE);
                 }else{
                     mEmptyTextView.setVisibility(View.VISIBLE);
                 }
