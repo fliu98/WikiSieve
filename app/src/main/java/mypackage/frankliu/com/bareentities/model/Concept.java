@@ -1,4 +1,4 @@
-package mypackage.frankliu.com.bareentities;
+package mypackage.frankliu.com.bareentities.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -9,7 +9,7 @@ public class Concept implements Parcelable{
     private Image image;
     private WikiLinks lod;
 
-    protected Concept(Parcel in) {
+    private Concept(Parcel in) {
         label = in.readString();
         uri = in.readString();
         image = in.readParcelable(Image.class.getClassLoader());

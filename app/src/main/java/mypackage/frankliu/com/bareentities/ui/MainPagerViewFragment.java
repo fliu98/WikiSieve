@@ -1,4 +1,4 @@
-package mypackage.frankliu.com.bareentities;
+package mypackage.frankliu.com.bareentities.ui;
 
 
 import android.graphics.drawable.Drawable;
@@ -13,14 +13,15 @@ import android.support.v4.view.ViewPager;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ImageSpan;
-import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-public class MainPagerViewFragment extends Fragment implements QueryFragment.OnHistoryChangedListener{
+import mypackage.frankliu.com.bareentities.R;
+
+public class MainPagerViewFragment extends Fragment implements QueryFragment.OnHistoryChangedListener {
 
     private static final String EXTRA_EXTERNAL_QUERY_TEXT = "extra_external_query_text";
 
@@ -67,7 +68,7 @@ public class MainPagerViewFragment extends Fragment implements QueryFragment.OnH
 
         private ArrayList<Fragment> registeredFragments = new ArrayList<Fragment>();
 
-        public MainPagerViewAdapter (FragmentManager fm){
+        MainPagerViewAdapter(FragmentManager fm){
             super(fm);
         }
 
@@ -90,7 +91,7 @@ public class MainPagerViewFragment extends Fragment implements QueryFragment.OnH
             return fragment;
         }
 
-        public Fragment getRegisteredFragment(int position){
+        Fragment getRegisteredFragment(int position){
             return registeredFragments.get(position);
         }
 

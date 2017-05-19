@@ -1,11 +1,11 @@
-package mypackage.frankliu.com.bareentities;
+package mypackage.frankliu.com.bareentities.database;
 
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class AppDatabaseHelper extends SQLiteOpenHelper{
+class AppDatabaseHelper extends SQLiteOpenHelper{
 
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "AppDatabase";
@@ -16,7 +16,7 @@ public class AppDatabaseHelper extends SQLiteOpenHelper{
             +PastQuery.Columns.CONCEPT_COUNT + " int, "
             +PastQuery.Columns.TIME_STAMP + " varchar(255) );";
 
-    public AppDatabaseHelper(Context context) {
+    AppDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

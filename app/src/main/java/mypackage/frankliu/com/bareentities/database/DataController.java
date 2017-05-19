@@ -1,4 +1,4 @@
-package mypackage.frankliu.com.bareentities;
+package mypackage.frankliu.com.bareentities.database;
 
 
 import android.content.ContentValues;
@@ -11,19 +11,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataController {
-    private AppDatabaseHelper dbHelper;
-    private SQLiteDatabase db;
+    private AppDatabaseHelper mDbHelper;
+    private SQLiteDatabase mDb;
 
     public DataController(Context context){
-        dbHelper = new AppDatabaseHelper(context);
+        mDbHelper = new AppDatabaseHelper(context);
     }
 
     public void open(){
-        db = dbHelper.getWritableDatabase();
+        mDb = mDbHelper.getWritableDatabase();
     }
 
     public void close(){
-        db.close();
+        mDb.close();
     }
 
     public void insertPastQuery(@Nullable String imageUri, String queryString, int conceptCount, String timestamp){
@@ -38,12 +38,12 @@ public class DataController {
         values.put(PastQuery.Columns.CONCEPT_COUNT,conceptCount);
         values.put(PastQuery.Columns.TIME_STAMP,timestamp);
 
-        db.insert(PastQuery.TABLE_NAME,null,values);
+        mDb.insert(PastQuery.TABLE_NAME,null,values);
     }
 
     public List<PastQuery> getAllPastQueries(){
-        List<PastQuery> items= new ArrayList<PastQuery>();
-        Cursor data = db.query(
+        List<PastQuery> items= new ArrayList<>();
+        Cursor data = mDb.query(
                 PastQuery.TABLE_NAME,
                 PastQuery.Columns.allColumns,
                 null,

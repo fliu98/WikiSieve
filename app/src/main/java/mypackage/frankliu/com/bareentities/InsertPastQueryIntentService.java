@@ -7,6 +7,10 @@ import android.support.annotation.Nullable;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
+
+import mypackage.frankliu.com.bareentities.database.DataController;
+import mypackage.frankliu.com.bareentities.model.TextAnalysis;
 
 public class InsertPastQueryIntentService extends IntentService{
 
@@ -50,7 +54,7 @@ public class InsertPastQueryIntentService extends IntentService{
         String imageUrl = null;
         String queryText = intent.getExtras().getString(EXTRA_QUERY_STRING_RECORD);
         int conceptCount = analysis.getAnnotations().size();
-        String timestamp = new SimpleDateFormat().format(Calendar.getInstance().getTime());
+        String timestamp = new SimpleDateFormat("M/d/yy h:mm a", Locale.getDefault()).format(Calendar.getInstance().getTime());
 
         if(analysis.getAnnotations().get(0).getImage()!=null){
             imageUrl = analysis.getAnnotations().get(0).getImage().getThumbnail();

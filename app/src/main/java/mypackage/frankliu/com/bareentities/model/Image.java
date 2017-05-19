@@ -1,4 +1,4 @@
-package mypackage.frankliu.com.bareentities;
+package mypackage.frankliu.com.bareentities.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -7,7 +7,7 @@ public class Image implements Parcelable{
     private String full;
     private String thumbnail;
 
-    protected Image(Parcel in) {
+    private Image(Parcel in) {
         full = in.readString();
         thumbnail = in.readString();
     }

@@ -1,9 +1,7 @@
-package mypackage.frankliu.com.bareentities;
+package mypackage.frankliu.com.bareentities.web;
 
-import java.util.ArrayList;
-
+import mypackage.frankliu.com.bareentities.model.TextAnalysis;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 

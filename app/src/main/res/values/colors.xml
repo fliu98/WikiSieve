@@ -6,5 +6,11 @@
     <color name="lightGrey">#D3D3D3</color>
     <color name="black">#0F0F0F</color>
     <color name="orange">#FFC04C</color>
-    <color name="light_background">#EEEEEE</color>
+    <color name="light_background">#fffaf0</color>
+    <color name="list_item_highlight">#f2473f</color>
+    <color name="list_item_highlight2">#cccccc</color>
+    <color name="tab_highlight">#e3701a</color>
+    <color name="list_item_background1">#e5e5e5</color>
+    <color name="tab_menu_selected">#f2ecb1</color>
+    <color name="tab_menu_normal">#ffffff</color>
 </resources>

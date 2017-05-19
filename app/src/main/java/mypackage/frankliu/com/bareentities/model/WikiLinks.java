@@ -1,4 +1,4 @@
-package mypackage.frankliu.com.bareentities;
+package mypackage.frankliu.com.bareentities.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -7,7 +7,7 @@ public class WikiLinks implements Parcelable{
     private String wikipedia;
     private String dbpedia;
 
-    protected WikiLinks(Parcel in) {
+    private WikiLinks(Parcel in) {
         wikipedia = in.readString();
         dbpedia = in.readString();
     }

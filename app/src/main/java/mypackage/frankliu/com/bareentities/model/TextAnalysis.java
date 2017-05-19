@@ -1,4 +1,4 @@
-package mypackage.frankliu.com.bareentities;
+package mypackage.frankliu.com.bareentities.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -10,7 +10,7 @@ public class TextAnalysis implements Parcelable{
     private String lang;
     private ArrayList<Concept> annotations;
 
-    protected TextAnalysis(Parcel in) {
+    private TextAnalysis(Parcel in) {
         timestamp = in.readString();
         lang = in.readString();
         annotations = in.createTypedArrayList(Concept.CREATOR);

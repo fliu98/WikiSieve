@@ -1,16 +1,15 @@
-package mypackage.frankliu.com.bareentities;
+package mypackage.frankliu.com.bareentities.ui;
 
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.LoaderManager;
-import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +18,16 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Locale;
+
+import mypackage.frankliu.com.bareentities.GetPastQueriesTask;
+import mypackage.frankliu.com.bareentities.R;
+import mypackage.frankliu.com.bareentities.database.PastQuery;
 
 public class HistoryFragment extends Fragment {
 
@@ -64,6 +71,22 @@ public class HistoryFragment extends Fragment {
 
             @Override
             public void onLoadFinished(Loader<ArrayList<PastQuery>> loader, ArrayList<PastQuery> data) {
+                Collections.sort(data, new Comparator<PastQuery>() {
+                    @Override
+                    public int compare(PastQuery o1, PastQuery o2) {
+                        SimpleDateFormat format = new SimpleDateFormat("M/d/yy h:mm a", Locale.getDefault());
+                        try {
+                            if (format.parse(o2.getTimestamp()).after(format.parse(o1.getTimestamp()))) {
+                                return 1;
+                            } else if (format.parse(o2.getTimestamp()).before(format.parse(o1.getTimestamp()))) {
+                                return -1;
+                            }
+                        } catch (ParseException e) {
+                            Log.e(this.getClass().getSimpleName(), "cannot parse times", e);
+                        }
+                        return 0;
+                    }
+                });
                 mPastQueries = data;
                 if(mPastQueries.size()>0){
                     mRecyclerView.setVisibility(View.VISIBLE);

@@ -6,6 +6,9 @@ import android.support.v4.content.AsyncTaskLoader;
 import java.util.ArrayList;
 import java.util.List;
 
+import mypackage.frankliu.com.bareentities.database.DataController;
+import mypackage.frankliu.com.bareentities.database.PastQuery;
+
 public class GetPastQueriesTask extends AsyncTaskLoader<ArrayList<PastQuery>> {
 
     public GetPastQueriesTask(Context context) {

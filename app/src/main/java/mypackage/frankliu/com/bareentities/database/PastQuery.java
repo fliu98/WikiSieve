@@ -1,4 +1,4 @@
-package mypackage.frankliu.com.bareentities;
+package mypackage.frankliu.com.bareentities.database;
 
 
 import android.support.annotation.Nullable;
@@ -22,7 +22,7 @@ public class PastQuery {
         return imageUri;
     }
 
-    public void setImageUri(@Nullable String imageUri){
+    void setImageUri(@Nullable String imageUri){
         this.imageUri=imageUri;
     }
 
@@ -30,7 +30,7 @@ public class PastQuery {
         return queryString;
     }
 
-    public void setQueryString(String queryString){
+    void setQueryString(String queryString){
         this.queryString=queryString;
     }
 
@@ -38,7 +38,7 @@ public class PastQuery {
         return conceptCount;
     }
 
-    public void setConceptCount(int conceptCount){
+    void setConceptCount(int conceptCount){
         this.conceptCount=conceptCount;
     }
 
@@ -46,18 +46,18 @@ public class PastQuery {
         return timestamp;
     }
 
-    public void setTimestamp(String timestamp){
+    void setTimestamp(String timestamp){
         this.timestamp=timestamp;
     }
 
-    public static String TABLE_NAME = "PastQueries";
+    static String TABLE_NAME = "PastQueries";
 
-    public static class Columns{
-        public static final String IMAGE_URI = "ImageUri",
+    static class Columns{
+        static final String IMAGE_URI = "ImageUri",
                                 QUERY_STRING = "QueryString",
                                 CONCEPT_COUNT = "ConceptCount",
                                 TIME_STAMP = "Timestamp";
-        public static String[] allColumns = {IMAGE_URI,QUERY_STRING,CONCEPT_COUNT,TIME_STAMP};
+        static String[] allColumns = {IMAGE_URI,QUERY_STRING,CONCEPT_COUNT,TIME_STAMP};
     }
 
 }

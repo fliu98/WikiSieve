@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_background"
-    tools:context="mypackage.frankliu.com.bareentities.HistoryFragment">
+    tools:context="mypackage.frankliu.com.bareentities.ui.HistoryFragment">
 
     <TextView
         android:id="@+id/empty"

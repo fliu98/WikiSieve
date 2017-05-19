@@ -1,4 +1,4 @@
-package mypackage.frankliu.com.bareentities;
+package mypackage.frankliu.com.bareentities.ui;
 
 
 import android.content.Context;
@@ -31,6 +31,11 @@ import com.wang.avi.AVLoadingIndicatorView;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import mypackage.frankliu.com.bareentities.InsertPastQueryIntentService;
+import mypackage.frankliu.com.bareentities.R;
+import mypackage.frankliu.com.bareentities.model.Concept;
+import mypackage.frankliu.com.bareentities.model.TextAnalysis;
+import mypackage.frankliu.com.bareentities.web.TextAnalysisRestAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -172,7 +177,7 @@ public class QueryFragment extends Fragment {
 
         toggleLoadIndication();
 
-        Call <TextAnalysis> call = mRestAdapter.asyncAnalyse(mQueryTextEdit.getText().toString());
+        Call <TextAnalysis> call = mRestAdapter.asyncAnalyze(mQueryTextEdit.getText().toString());
 
         call.enqueue(new Callback<TextAnalysis>() {
             @Override
@@ -299,7 +304,7 @@ public class QueryFragment extends Fragment {
     private class InsertResultReceiver extends ResultReceiver{
 
 
-        public InsertResultReceiver(Handler handler) {
+        InsertResultReceiver(Handler handler) {
             super(handler);
         }
 
@@ -310,7 +315,7 @@ public class QueryFragment extends Fragment {
         }
     }
 
-    public interface OnHistoryChangedListener{
+    interface OnHistoryChangedListener{
         void onHistoryChanged();
     }
 

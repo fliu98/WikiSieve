@@ -2,8 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/pager_view"
-    tools:context="mypackage.frankliu.com.bareentities.MainPagerViewFragment">
+    tools:context="mypackage.frankliu.com.bareentities.ui.MainPagerViewFragment">
 
     <LinearLayout
         android:orientation="vertical"
@@ -15,6 +16,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
+            app:tabIndicatorHeight="0dp"
+            app:tabSelectedTextColor="@color/tab_highlight"
+            app:tabBackground="@drawable/tab_menu_selector"
             style="@style/MainTabLayout"/>
 
         <View

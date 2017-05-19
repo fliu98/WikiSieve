@@ -1,5 +1,6 @@
-package mypackage.frankliu.com.bareentities;
+package mypackage.frankliu.com.bareentities.web;
 
+import mypackage.frankliu.com.bareentities.model.TextAnalysis;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -19,7 +20,7 @@ public class TextAnalysisRestAdapter {
         mAnalysisApi = retrofit.create(TextAnalysisApi.class);
     }
 
-    public Call<TextAnalysis> asyncAnalyse(String queryText){
+    public Call<TextAnalysis> asyncAnalyze(String queryText){
         return mAnalysisApi.getEntities(queryText,API_TOKEN,"image,lod");
     }
 }
